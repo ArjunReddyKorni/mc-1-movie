@@ -50,5 +50,31 @@ public class MovieService {
       return movieTreeSet;
     }
 
+    public List<String> getMovieWithHighestRating(Map<Movie,Integer> map){
+        //Create a ArrayList object of type String
+
+        List<String> movieArrayList = new ArrayList();
+        movieArrayList.add(map.entrySet().iterator().next().getKey().getMovieName());
+
+        //get the first value from the map and store it in the variable max
+
+        // Use entrySet().iterator().next() method to retrieve the first value of Map object
+            int max = map.entrySet().iterator().next().getValue();
+        for(Map.Entry<Movie,Integer> entry : map.entrySet()){
+
+            if(entry.getValue() > max){
+               //   System.out.println("movieArrayList = " + movieArrayList);
+                movieArrayList.set(0,entry.getKey().getMovieName());
+            }
+        }
+
+
+        //get the name of the movie with the highest rating and add it in the List created
+
+        //return the List object
+
+
+        return movieArrayList;
+    }
 
 }
