@@ -29,5 +29,26 @@ public class MovieService {
         return movieMap;
     }
 
+    public Set<String> getMovieNameWithRating4(Map<Movie,Integer> map,int rating){
+        //Create a TreeSet object
+        TreeSet<String> movieTreeSet = new TreeSet<>();
+
+        //Use entrySet() method to iterate through the map object
+         Set<Map.Entry<Movie, Integer>> entries = map.entrySet();
+        for (Map.Entry<Movie, Integer> entry : map.entrySet()) {
+            if(entry.getValue() == rating){
+                movieTreeSet.add(entry.getKey().getMovieName());
+            }
+        }
+
+        //retrieve all the movies name having rating as 4
+
+        //Store the movie name in TreeSet object
+
+        //return the TreeSet object
+
+      return movieTreeSet;
+    }
+
 
 }
