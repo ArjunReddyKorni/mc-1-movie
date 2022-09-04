@@ -97,5 +97,15 @@ public class MovieService {
 
     }
 
-
+    public static void main(String[] args) {
+        MovieService movieService = new MovieService();
+        Map <Movie,Integer> map = movieService.getMovieWithRating();
+        Set set = movieService.getMovieNameWithRating4(map,4);
+        System.out.println("Rating 4" + set);
+        Map map1 = movieService.getAllMoviesWithComedy(map);
+        System.out.println("Comedy Movie " + map1);
+        List list = movieService.getMovieWithHighestRating((Map<Movie, Integer>) map);
+        System.out.println("--------------");
+        System.out.println("Highest Rating " +list);
+    }
 }
