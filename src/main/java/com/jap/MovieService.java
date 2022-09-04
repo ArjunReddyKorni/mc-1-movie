@@ -76,5 +76,26 @@ public class MovieService {
 
         return movieArrayList;
     }
+    public Map<String,String> getAllMoviesWithComedy(Map<Movie,Integer> map){
+        //Create a Map object
+        Map<String,String > map1 = new HashMap();
+
+        //use entrySet to iterate through the Map object
+        for (Map.Entry<Movie, Integer> entry : map.entrySet()) {
+            if(entry.getKey().getGenre().equalsIgnoreCase("comedy")){
+                map1.put(entry.getKey().getMovieName(),entry.getKey().getReleaseDate());
+            }
+        }
+
+
+        //get all the movies name and their released date for the movie of genre "comedy"
+
+        //store movie name with release date in the above created Map object and return the Map object
+
+
+        return map1;
+
+    }
+
 
 }
